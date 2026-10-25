@@ -1,0 +1,1 @@
+"""ModernizeIQ recommendations components."""

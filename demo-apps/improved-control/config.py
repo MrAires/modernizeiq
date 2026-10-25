@@ -1,0 +1,6 @@
+import os
+
+DATABASE_PASSWORD = os.environ["DATABASE_PASSWORD"]
+DATABASE_URL = os.environ["DATABASE_URL"]
+PAYMENT_URL = os.environ["PAYMENT_URL"]
+DEBUG = False

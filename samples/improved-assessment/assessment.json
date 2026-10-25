@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.0",
+  "analyzer_version": "0.1.0",
+  "name": "improved-control",
+  "source_kind": "local",
+  "snapshot_sha256": "b93360b0b9a9930fce60d9b5b55c3f8d12228a9e3cb0a2824c35a54ee2ded187",
+  "profile": {
+    "primary_language": "Python",
+    "language_file_counts": {
+      "Python": 4
+    },
+    "frameworks": [
+      "Flask"
+    ],
+    "databases": [],
+    "api_inventory": [
+      {
+        "methods": [
+          "GET"
+        ],
+        "route": "/health",
+        "handler": "health",
+        "file": "app.py",
+        "line": 9,
+        "authentication": "not inferred",
+        "evidence_ids": [
+          "ev-b0de7b1cc17f1e"
+        ]
+      }
+    ],
+    "test_files": 1,
+    "coverage": "not measured",
+    "files_analyzed": 12,
+    "dependencies_declared": 1
+  },
+  "dependencies": [
+    {
+      "name": "Flask",
+      "version": "==3.1.2",
+      "ecosystem": "Python",
+      "scope": "runtime",
+      "file": "requirements.txt",
+      "line": 1,
+      "pinned": true,
+      "evidence_ids": [
+        "ev-3152ed1697d02d"
+      ],
+      "vulnerability_status": "not checked",
+      "outdated_status": "not checked",
+      "deprecated_status": "not checked"
+    }
+  ],
+  "architecture": {
+    "style": "Single-application / monolith candidate",
+    "confidence": "low — static hypothesis",
+    "nodes": [
+      {
+        "id": "application",
+        "label": "Application source",
+        "kind": "application",
+        "evidence_ids": [
+          "ev-3152ed1697d02d",
+          "ev-b0de7b1cc17f1e"
+        ]
+      }
+    ],
+    "edges": [],
+    "caution": "This is an inferred dependency sketch, not a runtime call graph or proof of deployment boundaries.",
+    "strategy": "Preserve a simple deployment model while validating module boundaries. Microservices require independent scale, ownership or release needs not established by this scan."
+  },
+  "readiness": {
+    "overall": 96.3,
+    "categories": [
+      {
+        "category": "Architecture",
+        "weight": 12,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "arch_layers",
+            "label": "Layer directories observed",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-8e32542e4cd078"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "layers"
+            }
+          },
+          {
+            "id": "arch_state",
+            "label": "No selected local persistence indicator",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-e65efa988bc0a0"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "LOCAL_STORAGE"
+            }
+          },
+          {
+            "id": "arch_migrations",
+            "label": "Migration directory observed",
+            "points_possible": 20,
+            "points_earned": 20,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-9a73c6d1070730"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "migrations"
+            }
+          }
+        ],
+        "evidence_count": 3
+      },
+      {
+        "category": "Configuration",
+        "weight": 12,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "config_env",
+            "label": "Environment configuration observed",
+            "points_possible": 60,
+            "points_earned": 60,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-4c7a5ea2d34a0a",
+              "ev-54b25b1eed97ed",
+              "ev-64f36adc409589"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "env_config"
+            }
+          },
+          {
+            "id": "config_endpoint",
+            "label": "No embedded endpoint indicator",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-326a97fd80121a"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "HARDCODED_URL"
+            }
+          }
+        ],
+        "evidence_count": 4
+      },
+      {
+        "category": "Security",
+        "weight": 16,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "security_secrets",
+            "label": "No selected embedded credential indicator",
+            "points_possible": 30,
+            "points_earned": 30,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-2754cf738b8dea"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "SECRET_LITERAL"
+            }
+          },
+          {
+            "id": "security_debug",
+            "label": "No enabled-debug indicator",
+            "points_possible": 20,
+            "points_earned": 20,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-a99c25562d09c4"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "DEBUG_ENABLED"
+            }
+          },
+          {
+            "id": "security_http",
+            "label": "No HTTP endpoint indicator",
+            "points_possible": 10,
+            "points_earned": 10,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-40f8619c9f6e02"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "HTTP_ENDPOINT"
+            }
+          },
+          {
+            "id": "security_sql",
+            "label": "No dynamic SQL indicator",
+            "points_possible": 15,
+            "points_earned": 15,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-ccf6b6a2b999ec"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "SQL_CONSTRUCTION"
+            }
+          },
+          {
+            "id": "security_shell",
+            "label": "No shell-enabled process indicator",
+            "points_possible": 15,
+            "points_earned": 15,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-4c6ba066c9fea2"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "SHELL_ENABLED"
+            }
+          },
+          {
+            "id": "security_cors",
+            "label": "No wildcard CORS indicator",
+            "points_possible": 10,
+            "points_earned": 10,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-d4fc309e29f27f"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "CORS_WILDCARD"
+            }
+          }
+        ],
+        "evidence_count": 6
+      },
+      {
+        "category": "Containerization",
+        "weight": 10,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "container_file",
+            "label": "Dockerfile present",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-db5d3ecb8a7a85"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "docker"
+            }
+          },
+          {
+            "id": "container_config",
+            "label": "Environment configuration observed",
+            "points_possible": 20,
+            "points_earned": 20,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-4c7a5ea2d34a0a",
+              "ev-54b25b1eed97ed",
+              "ev-64f36adc409589"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "env_config"
+            }
+          },
+          {
+            "id": "container_state",
+            "label": "No selected local persistence indicator",
+            "points_possible": 20,
+            "points_earned": 20,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-e54dbede542680"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "LOCAL_STORAGE"
+            }
+          },
+          {
+            "id": "container_health",
+            "label": "Docker healthcheck present",
+            "points_possible": 10,
+            "points_earned": 10,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-b3e7530e14e34e"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "container_health"
+            }
+          },
+          {
+            "id": "container_start",
+            "label": "Docker start instruction present",
+            "points_possible": 10,
+            "points_earned": 10,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-6bc5aec6eb20a5"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "docker_start"
+            }
+          }
+        ],
+        "evidence_count": 7
+      },
+      {
+        "category": "Testing",
+        "weight": 10,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "testing_files",
+            "label": "Test-named files present",
+            "points_possible": 60,
+            "points_earned": 60,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-1c10c44171cad4"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "tests"
+            }
+          },
+          {
+            "id": "testing_ci",
+            "label": "CI test command observed",
+            "points_possible": 25,
+            "points_earned": 25,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-7151c7df1acad6"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "ci_tests"
+            }
+          },
+          {
+            "id": "testing_coverage",
+            "label": "Coverage configuration observed",
+            "points_possible": 15,
+            "points_earned": 15,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-108ea78954183b"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "coverage_config"
+            }
+          }
+        ],
+        "evidence_count": 3
+      },
+      {
+        "category": "CI/CD",
+        "weight": 10,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "ci_file",
+            "label": "CI configuration present",
+            "points_possible": 50,
+            "points_earned": 50,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-3be31d1e23edb0"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "ci"
+            }
+          },
+          {
+            "id": "ci_tests",
+            "label": "CI test command observed",
+            "points_possible": 35,
+            "points_earned": 35,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-7151c7df1acad6"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "ci_tests"
+            }
+          },
+          {
+            "id": "ci_container",
+            "label": "CI container build observed",
+            "points_possible": 15,
+            "points_earned": 15,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-93f04919cd9b70"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "ci_container"
+            }
+          }
+        ],
+        "evidence_count": 3
+      },
+      {
+        "category": "Observability",
+        "weight": 8,
+        "score": 80.0,
+        "earned": 80,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "obs_logging",
+            "label": "Logging import observed",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-ebc5fc97c9c8f2"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "logging"
+            }
+          },
+          {
+            "id": "obs_health",
+            "label": "Health route observed",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-901ba83de8fa50"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "health"
+            }
+          },
+          {
+            "id": "obs_telemetry",
+            "label": "Metrics/tracing import observed",
+            "points_possible": 20,
+            "points_earned": 0,
+            "status": "not_satisfied",
+            "evidence_ids": [
+              "ev-71424ee9be604a"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "telemetry"
+            }
+          }
+        ],
+        "evidence_count": 3
+      },
+      {
+        "category": "Documentation",
+        "weight": 5,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "doc_readme",
+            "label": "README present",
+            "points_possible": 50,
+            "points_earned": 50,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-55b1eb69944ba6",
+              "ev-e128bff0771555"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "readme"
+            }
+          },
+          {
+            "id": "doc_deploy",
+            "label": "Deployment/operations file present",
+            "points_possible": 30,
+            "points_earned": 30,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-6a90f8d89edc4b"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "deployment_docs"
+            }
+          },
+          {
+            "id": "doc_governance",
+            "label": "Security/contributor guide present",
+            "points_possible": 20,
+            "points_earned": 20,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-98cbe017dbc9fa"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "governance_docs"
+            }
+          }
+        ],
+        "evidence_count": 4
+      },
+      {
+        "category": "Dependency Health",
+        "weight": 7,
+        "score": 70.0,
+        "earned": 70,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "dep_manifest",
+            "label": "Dependency declarations parsed",
+            "points_possible": 40,
+            "points_earned": 40,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-3152ed1697d02d"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "dependency_manifest"
+            }
+          },
+          {
+            "id": "dep_pins",
+            "label": "No unpinned declaration indicator",
+            "points_possible": 30,
+            "points_earned": 30,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-716b165e7328d9"
+            ],
+            "condition": {
+              "mode": "no_rule",
+              "reference": "DEP_UNPINNED"
+            }
+          },
+          {
+            "id": "dep_lock",
+            "label": "Recognized lockfile present",
+            "points_possible": 30,
+            "points_earned": 0,
+            "status": "not_satisfied",
+            "evidence_ids": [
+              "ev-ebcf78348aaf5b"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "lockfile"
+            }
+          }
+        ],
+        "evidence_count": 3
+      },
+      {
+        "category": "Operational Readiness",
+        "weight": 10,
+        "score": 100.0,
+        "earned": 100,
+        "possible": 100,
+        "checks": [
+          {
+            "id": "ops_health",
+            "label": "Health route observed",
+            "points_possible": 35,
+            "points_earned": 35,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-901ba83de8fa50"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "health"
+            }
+          },
+          {
+            "id": "ops_config",
+            "label": "Environment configuration observed",
+            "points_possible": 35,
+            "points_earned": 35,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-4c7a5ea2d34a0a",
+              "ev-54b25b1eed97ed",
+              "ev-64f36adc409589"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "env_config"
+            }
+          },
+          {
+            "id": "ops_docs",
+            "label": "Deployment/operations file present",
+            "points_possible": 30,
+            "points_earned": 30,
+            "status": "satisfied",
+            "evidence_ids": [
+              "ev-6a90f8d89edc4b"
+            ],
+            "condition": {
+              "mode": "fact",
+              "reference": "deployment_docs"
+            }
+          }
+        ],
+        "evidence_count": 5
+      }
+    ],
+    "config_version": "1.0",
+    "config_sha256": "f706b67f3480fb777160b494f35f9a110f1563591777ccfd5e806b25ed8ff531",
+    "formula": "100 × earned check points / possible check points; overall = weighted mean of category scores",
+    "interpretation": "Configurable modernization-readiness heuristic. Not a security certification, migration prediction or measured test coverage."
+  },
+  "findings": [],
+  "recommendations": [],
+  "evidence": [
+    {
+      "id": "ev-108ea78954183b",
+      "rule_id": "coverage_config",
+      "file": ".coveragerc",
+      "line": null,
+      "file_sha256": "eda9c271e17fdd5089d7391cc11ddd41e74e3ac20f47056c6fb74cea1e4c3471",
+      "description": "Coverage configuration is present; coverage was not executed or measured."
+    },
+    {
+      "id": "ev-1c10c44171cad4",
+      "rule_id": "tests",
+      "file": "tests/test_orders.py",
+      "line": null,
+      "file_sha256": "a9ac791dc33402eb52d54a62f6a6bd0ecb50bb190071da2903b4afc5035bf483",
+      "description": "A test-named file is present; tests were not executed."
+    },
+    {
+      "id": "ev-2754cf738b8dea",
+      "rule_id": "security_secrets",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-3152ed1697d02d",
+      "rule_id": "dependency_manifest",
+      "file": "requirements.txt",
+      "line": 1,
+      "file_sha256": "6979faed9b4726634bb0ff2b36f3e5a080e4d89a162dc1f264fce99bae332a8a",
+      "description": "A dependency declaration was parsed."
+    },
+    {
+      "id": "ev-326a97fd80121a",
+      "rule_id": "config_endpoint",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-3be31d1e23edb0",
+      "rule_id": "ci",
+      "file": ".github/workflows/check.yml",
+      "line": null,
+      "file_sha256": "0b28b01ad91500235a20fbb24aa0d687176d7e833a07b7634f44bdad33d151cb",
+      "description": "A recognized CI configuration file is present."
+    },
+    {
+      "id": "ev-40f8619c9f6e02",
+      "rule_id": "security_http",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-4c6ba066c9fea2",
+      "rule_id": "security_shell",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-4c7a5ea2d34a0a",
+      "rule_id": "env_config",
+      "file": "config.py",
+      "line": 5,
+      "file_sha256": "3f2408ccf8219bc8841be3b147acfddd656965c39d7485f97e347b6a39429afe",
+      "description": "An environment configuration read is present."
+    },
+    {
+      "id": "ev-54b25b1eed97ed",
+      "rule_id": "env_config",
+      "file": "config.py",
+      "line": 4,
+      "file_sha256": "3f2408ccf8219bc8841be3b147acfddd656965c39d7485f97e347b6a39429afe",
+      "description": "An environment configuration read is present."
+    },
+    {
+      "id": "ev-55b1eb69944ba6",
+      "rule_id": "readme",
+      "file": "README.md",
+      "line": null,
+      "file_sha256": "263a87f206fb64c067dce5d3d54b5eaf2bb8a08f16b18f5ef123b907fba5bac1",
+      "description": "A README file is present."
+    },
+    {
+      "id": "ev-64f36adc409589",
+      "rule_id": "env_config",
+      "file": "config.py",
+      "line": 3,
+      "file_sha256": "3f2408ccf8219bc8841be3b147acfddd656965c39d7485f97e347b6a39429afe",
+      "description": "An environment configuration read is present."
+    },
+    {
+      "id": "ev-6a90f8d89edc4b",
+      "rule_id": "deployment_docs",
+      "file": "DEPLOYMENT.md",
+      "line": null,
+      "file_sha256": "86bc25f9f2658c136926706a963a378d60e4e88ba31ae8ca7c5a2db4b09b25b3",
+      "description": "A deployment/operations-named file is present."
+    },
+    {
+      "id": "ev-6bc5aec6eb20a5",
+      "rule_id": "docker_start",
+      "file": "Dockerfile",
+      "line": null,
+      "file_sha256": "b7beab5a49d0e44d78bb68025fc5405d4556ea2b4789679f2a0f012654ae579c",
+      "description": "A container startup instruction is present."
+    },
+    {
+      "id": "ev-71424ee9be604a",
+      "rule_id": "obs_telemetry",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-7151c7df1acad6",
+      "rule_id": "ci_tests",
+      "file": ".github/workflows/check.yml",
+      "line": null,
+      "file_sha256": "0b28b01ad91500235a20fbb24aa0d687176d7e833a07b7634f44bdad33d151cb",
+      "description": "CI text includes a test command; execution was not verified."
+    },
+    {
+      "id": "ev-716b165e7328d9",
+      "rule_id": "dep_pins",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-8e32542e4cd078",
+      "rule_id": "layers",
+      "file": "services/orders.py",
+      "line": null,
+      "file_sha256": "7ebca2239fd6f62c64a0be282a499c8f1d3957a1f8b1fa856dccfdfe1cb96edc",
+      "description": "A conventional layer directory is present; separation is not proven."
+    },
+    {
+      "id": "ev-901ba83de8fa50",
+      "rule_id": "health",
+      "file": "app.py",
+      "line": 9,
+      "file_sha256": "4e0fd25056daab94e78428acb7357980f603e732441d855212099348dd4f795c",
+      "description": "A conventional health/readiness route is declared; behavior is unverified."
+    },
+    {
+      "id": "ev-93f04919cd9b70",
+      "rule_id": "ci_container",
+      "file": ".github/workflows/check.yml",
+      "line": null,
+      "file_sha256": "0b28b01ad91500235a20fbb24aa0d687176d7e833a07b7634f44bdad33d151cb",
+      "description": "CI text includes a container build indicator."
+    },
+    {
+      "id": "ev-98cbe017dbc9fa",
+      "rule_id": "governance_docs",
+      "file": "SECURITY.md",
+      "line": null,
+      "file_sha256": "73bd8b89e8b9f624934e83935260cc8c9b01e915083e2667661bad49bcbc6645",
+      "description": "A security or contributor guide is present."
+    },
+    {
+      "id": "ev-9a73c6d1070730",
+      "rule_id": "migrations",
+      "file": "migrations/README.md",
+      "line": null,
+      "file_sha256": "41e42980b6d3b1cd4b56fb68dcf225e5a4187e94046c52f040d5bd3b92ad1a22",
+      "description": "A migration-tool directory is present."
+    },
+    {
+      "id": "ev-a99c25562d09c4",
+      "rule_id": "security_debug",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-b0de7b1cc17f1e",
+      "rule_id": "api_route",
+      "file": "app.py",
+      "line": 9,
+      "file_sha256": "4e0fd25056daab94e78428acb7357980f603e732441d855212099348dd4f795c",
+      "description": "A supported web-route decorator is present."
+    },
+    {
+      "id": "ev-b3e7530e14e34e",
+      "rule_id": "container_health",
+      "file": "Dockerfile",
+      "line": null,
+      "file_sha256": "b7beab5a49d0e44d78bb68025fc5405d4556ea2b4789679f2a0f012654ae579c",
+      "description": "A Docker healthcheck instruction is present."
+    },
+    {
+      "id": "ev-ccf6b6a2b999ec",
+      "rule_id": "security_sql",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-d4fc309e29f27f",
+      "rule_id": "security_cors",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-db5d3ecb8a7a85",
+      "rule_id": "docker",
+      "file": "Dockerfile",
+      "line": null,
+      "file_sha256": "b7beab5a49d0e44d78bb68025fc5405d4556ea2b4789679f2a0f012654ae579c",
+      "description": "A Dockerfile is present; image construction was not tested."
+    },
+    {
+      "id": "ev-e128bff0771555",
+      "rule_id": "readme",
+      "file": "migrations/README.md",
+      "line": null,
+      "file_sha256": "41e42980b6d3b1cd4b56fb68dcf225e5a4187e94046c52f040d5bd3b92ad1a22",
+      "description": "A README file is present."
+    },
+    {
+      "id": "ev-e54dbede542680",
+      "rule_id": "container_state",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-e65efa988bc0a0",
+      "rule_id": "arch_state",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    },
+    {
+      "id": "ev-ebc5fc97c9c8f2",
+      "rule_id": "logging",
+      "file": "app.py",
+      "line": 2,
+      "file_sha256": "4e0fd25056daab94e78428acb7357980f603e732441d855212099348dd4f795c",
+      "description": "A logging library import is present."
+    },
+    {
+      "id": "ev-ebcf78348aaf5b",
+      "rule_id": "dep_lock",
+      "file": "<inventory>",
+      "line": null,
+      "file_sha256": null,
+      "description": "No matching indicator was observed within the inspected snapshot; unsupported or skipped files are outside this check."
+    }
+  ],
+  "files": [
+    {
+      "path": ".coveragerc",
+      "bytes": 17,
+      "sha256": "eda9c271e17fdd5089d7391cc11ddd41e74e3ac20f47056c6fb74cea1e4c3471"
+    },
+    {
+      "path": ".github/workflows/check.yml",
+      "bytes": 283,
+      "sha256": "0b28b01ad91500235a20fbb24aa0d687176d7e833a07b7634f44bdad33d151cb"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "bytes": 170,
+      "sha256": "86bc25f9f2658c136926706a963a378d60e4e88ba31ae8ca7c5a2db4b09b25b3"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 311,
+      "sha256": "b7beab5a49d0e44d78bb68025fc5405d4556ea2b4789679f2a0f012654ae579c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 182,
+      "sha256": "263a87f206fb64c067dce5d3d54b5eaf2bb8a08f16b18f5ef123b907fba5bac1"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 121,
+      "sha256": "73bd8b89e8b9f624934e83935260cc8c9b01e915083e2667661bad49bcbc6645"
+    },
+    {
+      "path": "app.py",
+      "bytes": 246,
+      "sha256": "4e0fd25056daab94e78428acb7357980f603e732441d855212099348dd4f795c"
+    },
+    {
+      "path": "config.py",
+      "bytes": 159,
+      "sha256": "3f2408ccf8219bc8841be3b147acfddd656965c39d7485f97e347b6a39429afe"
+    },
+    {
+      "path": "migrations/README.md",
+      "bytes": 110,
+      "sha256": "41e42980b6d3b1cd4b56fb68dcf225e5a4187e94046c52f040d5bd3b92ad1a22"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 13,
+      "sha256": "6979faed9b4726634bb0ff2b36f3e5a080e4d89a162dc1f264fce99bae332a8a"
+    },
+    {
+      "path": "services/orders.py",
+      "bytes": 85,
+      "sha256": "7ebca2239fd6f62c64a0be282a499c8f1d3957a1f8b1fa856dccfdfe1cb96edc"
+    },
+    {
+      "path": "tests/test_orders.py",
+      "bytes": 49,
+      "sha256": "a9ac791dc33402eb52d54a62f6a6bd0ecb50bb190071da2903b4afc5035bf483"
+    }
+  ],
+  "skipped": [],
+  "warnings": [],
+  "status": "assessed within supported scope",
+  "limits": {
+    "max_entries": 2000,
+    "max_file_bytes": 524288,
+    "max_total_bytes": 20971520,
+    "max_archive_bytes": 10485760,
+    "max_compression_ratio": 100,
+    "max_depth": 20
+  },
+  "limitations": [
+    "Static patterns can miss findings or produce false positives.",
+    "No repository code, tests, builds, dependency installs or external services were executed.",
+    "Dependency vulnerability, age and deprecation were not checked.",
+    "Scores are configurable heuristics; missing observations are not runtime proof.",
+    "No LLM, API server, database history or React workbench is included in this milestone."
+  ]
+}

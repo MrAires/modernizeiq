@@ -1,0 +1,23 @@
+{
+  "description": "Hand-labelled fixture expectations at rule/file/line level. Never passed to the analyzer.",
+  "legacy-commerce": [
+    ["SECRET_LITERAL", "config.py", 2],
+    ["LOCAL_STORAGE", "config.py", 3],
+    ["HARDCODED_URL", "config.py", 4],
+    ["HTTP_ENDPOINT", "config.py", 4],
+    ["DEBUG_ENABLED", "config.py", 5],
+    ["LOCAL_STORAGE", "storage.py", 3],
+    ["DEP_UNPINNED", "requirements.txt", 3],
+    ["MISSING_DOCKER", "<inventory>", null],
+    ["MISSING_CI", "<inventory>", null],
+    ["MISSING_LOGGING", "<inventory>", null],
+    ["MISSING_HEALTH", "<inventory>", null]
+  ],
+  "improved-control": [],
+  "rule_categories": {
+    "SECRET_LITERAL": "Security", "HTTP_ENDPOINT": "Security", "DEBUG_ENABLED": "Security",
+    "LOCAL_STORAGE": "Architecture", "HARDCODED_URL": "Configuration", "DEP_UNPINNED": "Dependency Health",
+    "MISSING_DOCKER": "Containerization", "MISSING_CI": "CI/CD", "MISSING_LOGGING": "Observability",
+    "MISSING_HEALTH": "Operational Readiness"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "scope": "Two controlled educational fixtures only; not a real-world accuracy estimate.",
+  "results": {
+    "legacy-commerce": {
+      "expected": 11,
+      "detected": 11,
+      "matched": 11,
+      "missed": [],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "readiness": 22.2,
+      "categories": {
+        "Architecture": {
+          "expected": 2,
+          "detected": 2,
+          "matched": 2,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "CI/CD": {
+          "expected": 1,
+          "detected": 1,
+          "matched": 1,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "Configuration": {
+          "expected": 1,
+          "detected": 1,
+          "matched": 1,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "Containerization": {
+          "expected": 1,
+          "detected": 1,
+          "matched": 1,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "Dependency Health": {
+          "expected": 1,
+          "detected": 1,
+          "matched": 1,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "Observability": {
+          "expected": 1,
+          "detected": 1,
+          "matched": 1,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "Operational Readiness": {
+          "expected": 1,
+          "detected": 1,
+          "matched": 1,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "Security": {
+          "expected": 3,
+          "detected": 3,
+          "matched": 3,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      }
+    },
+    "improved-control": {
+      "expected": 0,
+      "detected": 0,
+      "matched": 0,
+      "missed": [],
+      "false_positives": [],
+      "precision": null,
+      "recall": null,
+      "readiness": 96.3,
+      "categories": {
+        "Architecture": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "CI/CD": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "Configuration": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "Containerization": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "Dependency Health": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "Observability": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "Operational Readiness": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        },
+        "Security": {
+          "expected": 0,
+          "detected": 0,
+          "matched": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+ModernizeIQ — improved-control
+Executive assessment
+
+Readiness heuristic: 96.3 / 100
+Inspected: 12 supported files
+Architecture hypothesis: Single-application / monolith candidate
+
+Recommended priorities (human confirmation required):
+
+Business implication: configuration, reliability and delivery risks should be understood before moving the application.
+No migration cost, timeline or savings are estimated from source code alone.
+Assessment limits: static indicators only; no code execution, vulnerability lookup, measured coverage or LLM.

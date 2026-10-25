@@ -1,0 +1,17 @@
+ModernizeIQ — legacy-commerce
+Executive assessment
+
+Readiness heuristic: 22.2 / 100
+Inspected: 7 supported files
+Architecture hypothesis: Single-application / monolith candidate
+
+Recommended priorities (human confirmation required):
+- P0 / Stabilize: Disable debug mode in deployment configuration and test the production startup path.
+- P0 / Stabilize: Confirm the finding; rotate a real exposed credential and use a managed secret reference.
+- P1 / Stabilize: Make environment-specific endpoints configurable; document any intentional fixed public endpoint.
+- P1 / Stabilize: Review the trust boundary and use TLS for sensitive traffic.
+- P1 / Prepare: Verify durability requirements; consider managed relational or object storage for shared state.
+
+Business implication: configuration, reliability and delivery risks should be understood before moving the application.
+No migration cost, timeline or savings are estimated from source code alone.
+Assessment limits: static indicators only; no code execution, vulnerability lookup, measured coverage or LLM.

@@ -1,0 +1,10 @@
+# Static analysis fixture. Workflow presence does not prove successful CI.
+name: Fixture checks
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest discover -s tests
+      - run: docker build -t fixture .

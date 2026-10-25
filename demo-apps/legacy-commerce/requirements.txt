@@ -1,0 +1,3 @@
+# Historical-style declarations for static inspection; do not install this demo.
+Flask==1.1.4
+SQLAlchemy>=1.3
